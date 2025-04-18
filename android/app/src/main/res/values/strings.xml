@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">MGS APP</string>
+  <string name="facebook_app_id">1927462074452286</string>
+  <string name="fb_login_protocol_scheme">fb1927462074452286</string> 
+  <string name="facebook_client_token">1927462074452286|KFcwBjdMfsJZ-zmc3uhpMXi8IT8</string>
+</resources>
