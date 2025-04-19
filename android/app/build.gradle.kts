@@ -29,7 +29,7 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
- 
+    /*
     signingConfigs {
         getByName("debug").apply  {
             storeFile = file("test.jks")
@@ -38,6 +38,7 @@ android {
             keyPassword = "123456"
         }
     }
+    */
   buildTypes {
         getByName("debug") {
             signingConfig = signingConfigs.getByName("debug")

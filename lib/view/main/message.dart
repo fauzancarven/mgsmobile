@@ -5,7 +5,7 @@ import 'package:mgsapp/globals.dart';
 import 'package:mgsapp/view/login/login.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 
-class MessagePageTabController extends StatelessWidget {
+class MessagePageTabController extends StatefulWidget {
   const MessagePageTabController({
     required this.title,
     required this.controller,
@@ -17,10 +17,16 @@ class MessagePageTabController extends StatelessWidget {
   final MotionTabBarController controller;
   final dynamic context;
 
+  @override
+  State<MessagePageTabController> createState() =>
+      _MessagePageTabControllerState();
+}
+
+class _MessagePageTabControllerState extends State<MessagePageTabController> {
   void _logout() {
     GoogleSignInApi.logout();
     Navigator.pushReplacement(
-      context,
+      widget.context,
       MaterialPageRoute(builder: (context) => Login()),
     );
   }
@@ -30,66 +36,123 @@ class MessagePageTabController extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          title,
+          widget.title,
           style: GoogleFonts.poppins(
             color: AppColors.texthead,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
-        actions: [],
         backgroundColor: AppColors.background,
+        actions: <Widget>[
+          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+        ],
       ),
       backgroundColor: AppColors.background,
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 10,
           children: [
-            ElevatedButton(
-              onPressed: _logout,
-              style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: AppColors.texthead, // Warna teks tombol
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), // Bentuk tombol
-                ),
-              ),
-              child: const Text('Logout Application'),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text("Selamat Siang, Saya dari ABSDAF ..."),
             ),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                side: BorderSide(color: Colors.grey),
-              ),
-              onPressed: () => controller.index = 0,
-              child: const Text(
-                'Dashboard Page',
-                style: TextStyle(color: AppColors.texthead),
-              ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text("Selamat Siang, Saya dari ABSDAF ..."),
             ),
-            ElevatedButton(
-              onPressed: () => controller.index = 1,
-              child: const Text(
-                'Home Page',
-                style: TextStyle(color: AppColors.texthead),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text("Selamat Siang, Saya dari ABSDAF ..."),
+            ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text(
+                "Selamat Siang, Saya dari ABSDAF ...Selamat Siang, Saya dari ABSDAF ...",
               ),
             ),
-            ElevatedButton(
-              onPressed: () => controller.index = 2,
-              child: const Text(
-                'Profile Page',
-                style: TextStyle(color: AppColors.texthead),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text(
+                "Selamat Siang, Saya dari ABSDAF ...Selamat Siang, Saya dari ABSDAF ...",
               ),
             ),
-            ElevatedButton(
-              onPressed: () => controller.index = 3,
-              child: const Text(
-                'Settings Page',
-                style: TextStyle(color: AppColors.texthead),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text(
+                "Selamat Siang, Saya dari ABSDAF ...Selamat Siang, Saya dari ABSDAF ...",
               ),
+            ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text(
+                "Selamat Siang, Saya dari ABSDAF ...Selamat Siang, Saya dari ABSDAF ...",
+              ),
+            ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Ayunda Safitri"),
+              subtitle: Text("Selamat Siang, Saya dari ABSDAF ..."),
+            ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text(
+                "Selamat Siang, Saya dari ABSDAF ...Selamat Siang, Saya dari ABSDAF ...",
+              ),
+            ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text(
+                "Selamat Siang, Saya dari ABSDAF ...Selamat Siang, Saya dari ABSDAF ...",
+              ),
+            ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Ayunda Safitri"),
+              subtitle: Text("Selamat Siang, Saya dari ABSDAF ..."),
+            ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text(
+                "Selamat Siang, Saya dari ABSDAF ...Selamat Siang, Saya dari ABSDAF ...",
+              ),
+            ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Fauzan caren"),
+              subtitle: Text(
+                "Selamat Siang, Saya dari ABSDAF ...Selamat Siang, Saya dari ABSDAF ...",
+              ),
+            ),
+            ListTile(
+              leading: CircleAvatar(),
+              title: Text("Ayunda Safitri"),
+              subtitle: Text("Selamat Siang, Saya dari ABSDAF ..."),
             ),
           ],
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.texthead,
+        foregroundColor: Colors.white,
+        shape: const CircleBorder(),
+        elevation: 10,
+        onPressed: () {
+          setState(() {});
+        },
+        child: Icon(Icons.add),
       ),
     );
   }

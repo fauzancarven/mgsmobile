@@ -6,7 +6,7 @@ import 'package:mgsapp/view/login/login.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 
 class ProfilePageTabController extends StatelessWidget {
-  const ProfilePageTabController({
+  ProfilePageTabController({
     required this.title,
     required this.controller,
     required this.context,
@@ -69,81 +69,85 @@ class ProfilePageTabController extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(10, 2, 10, 2),
                 child: Text("Personal"),
               ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.fromLTRB(10, 2, 10, 2),
-                child: Column(
-                  children: [
-                    TextField(
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.blue,
-                      ),
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.tag), // Icon di sebelah kiri
-                        // suffixIcon: Icon(Icons.clear), // Icon di sebelah kanan
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: const Color.fromARGB(255, 223, 223, 223),
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        disabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: const Color.fromARGB(255, 223, 223, 223),
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        hintText: 'ID00000',
-                        labelText: 'Kode Personal',
-                        contentPadding: EdgeInsets.all(0),
-                        fillColor: Colors.grey.shade300,
-                        filled: true,
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    TextField(
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.person), // Icon di sebelah kiri
-                        // suffixIcon: Icon(Icons.clear), // Icon di sebelah kanan
-                        border: OutlineInputBorder(),
-                        hintText: 'Syahrul Fauzan',
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 0,
-                          vertical: 0,
-                        ),
-                        suffixIcon: Icon(Icons.edit),
-                      ),
-                      enabled: false,
-                    ),
-                    SizedBox(height: 5),
-                    TextField(
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.tag), // Icon di sebelah kiri
-                        // suffixIcon: Icon(Icons.clear), // Icon di sebelah kanan
-                        border: OutlineInputBorder(),
-                        hintText: 'ID00004',
-                        contentPadding: EdgeInsets.all(0),
-                      ),
-                      enabled: false,
-                    ),
-                  ],
+              ListTile(
+                leading: Icon(Icons.tag),
+                title: Text("NIP", style: TextStyle(color: AppColors.texthead)),
+                subtitle: Text(
+                  "ID00004",
+                  style: TextStyle(
+                    color: AppColors.texthead,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
+                trailing: Icon(Icons.chevron_right, size: 20),
+                style: ListTileStyle.list,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.fromLTRB(10, 20, 10, 2),
-                child: Text("Account"),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text(
+                  "Username",
+                  style: TextStyle(color: AppColors.texthead),
+                ),
+                subtitle: Text(
+                  "Syahrul Fauzan",
+                  style: TextStyle(
+                    color: AppColors.texthead,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                trailing: Icon(Icons.chevron_right, size: 20),
               ),
+              ListTile(
+                leading: Icon(Icons.group),
+                title: Text(
+                  "Level",
+                  style: TextStyle(color: AppColors.texthead),
+                ),
+                subtitle: Text(
+                  "Administrator",
+                  style: TextStyle(
+                    color: AppColors.texthead,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                trailing: Icon(Icons.chevron_right, size: 20),
+              ),
+              SizedBox(height: 30),
               Container(
                 width: MediaQuery.of(context).size.width,
                 margin: EdgeInsets.fromLTRB(10, 2, 10, 2),
-                padding: EdgeInsets.all(10),
-                color: Colors.black12,
-                height: 100,
+                child: Text("Social Media"),
               ),
-
+              ListTile(
+                leading: Icon(Icons.facebook),
+                title: Text(
+                  "Facebook",
+                  style: TextStyle(color: AppColors.texthead),
+                ),
+                subtitle: Text(
+                  "Belum Terhubung",
+                  style: TextStyle(
+                    color: AppColors.texthead,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                trailing: Icon(Icons.chevron_right, size: 20),
+              ),
+              ListTile(
+                leading: Icon(Icons.g_mobiledata_sharp),
+                title: Text(
+                  "Google",
+                  style: TextStyle(color: AppColors.texthead),
+                ),
+                subtitle: Text(
+                  "Belum Terhubung",
+                  style: TextStyle(
+                    color: AppColors.texthead,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                trailing: Icon(Icons.chevron_right, size: 20),
+              ),
               SizedBox(height: 50),
               Container(
                 margin: EdgeInsets.fromLTRB(10, 2, 10, 2),
@@ -157,9 +161,45 @@ class ProfilePageTabController extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10), // Bentuk tombol
                     ),
                   ),
-                  child: const Text(
-                    'Logout Aplikasi',
-                    style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.key),
+                      SizedBox(width: 10),
+                      Text(
+                        'Change Password',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 2, 10, 2),
+                child: ElevatedButton(
+                  onPressed: _logout,
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 36),
+                    foregroundColor: Colors.white,
+                    backgroundColor: AppColors.texthead, // Warna teks tombol
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10), // Bentuk tombol
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.logout),
+                      SizedBox(width: 10),
+                      Text(
+                        'Logout Aplikasi',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

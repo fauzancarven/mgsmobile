@@ -17,14 +17,6 @@ class HomePageTabController extends StatelessWidget {
   final MotionTabBarController controller;
   final dynamic context;
 
-  void _logout() {
-    GoogleSignInApi.logout();
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => Login()),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,56 +33,6 @@ class HomePageTabController extends StatelessWidget {
         backgroundColor: AppColors.background,
       ),
       backgroundColor: AppColors.background,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 10,
-          children: [
-            ElevatedButton(
-              onPressed: _logout,
-              style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: AppColors.texthead, // Warna teks tombol
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), // Bentuk tombol
-                ),
-              ),
-              child: const Text('Logout Application'),
-            ),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                side: BorderSide(color: Colors.grey),
-              ),
-              onPressed: () => controller.index = 0,
-              child: const Text(
-                'Dashboard Page',
-                style: TextStyle(color: AppColors.texthead),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () => controller.index = 1,
-              child: const Text(
-                'Home Page',
-                style: TextStyle(color: AppColors.texthead),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () => controller.index = 2,
-              child: const Text(
-                'Profile Page',
-                style: TextStyle(color: AppColors.texthead),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () => controller.index = 3,
-              child: const Text(
-                'Settings Page',
-                style: TextStyle(color: AppColors.texthead),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

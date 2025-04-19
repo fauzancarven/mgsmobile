@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mgsapp/component/inputtext.dart';
+import 'package:mgsapp/widget/inputtext.dart';
 import 'package:mgsapp/globals.dart';
 import 'package:mgsapp/view/login/sendmail.dart';
 
