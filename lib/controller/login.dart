@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:mgsapp/api/google.dart';
-import 'package:mgsapp/view/main/home.dart';
+import 'package:mgsapp/view/main/maintab.dart';
 
 class LoginController {
   final Function(Map<String, dynamic>?) onUserDataChanged;

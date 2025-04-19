@@ -5,8 +5,8 @@ import 'package:mgsapp/globals.dart';
 import 'package:mgsapp/view/login/login.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 
-class HomePageTabController extends StatelessWidget {
-  const HomePageTabController({
+class ProjectPageTabController extends StatelessWidget {
+  const ProjectPageTabController({
     required this.title,
     required this.controller,
     required this.context,
