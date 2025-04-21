@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mgsapp/api/google.dart';
 import 'package:mgsapp/globals.dart';
-import 'package:mgsapp/view/login/login.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 
 class HomePageTabController extends StatelessWidget {

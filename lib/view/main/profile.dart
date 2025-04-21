@@ -6,7 +6,7 @@ import 'package:mgsapp/view/login/login.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 
 class ProfilePageTabController extends StatelessWidget {
-  ProfilePageTabController({
+  const ProfilePageTabController({
     required this.title,
     required this.controller,
     required this.context,

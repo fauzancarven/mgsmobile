@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mgsapp/api/google.dart';
 import 'package:mgsapp/globals.dart';
-import 'package:mgsapp/view/login/login.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 
 class MessagePageTabController extends StatefulWidget {
@@ -23,14 +21,6 @@ class MessagePageTabController extends StatefulWidget {
 }
 
 class _MessagePageTabControllerState extends State<MessagePageTabController> {
-  void _logout() {
-    GoogleSignInApi.logout();
-    Navigator.pushReplacement(
-      widget.context,
-      MaterialPageRoute(builder: (context) => Login()),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
